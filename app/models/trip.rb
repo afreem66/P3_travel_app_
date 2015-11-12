@@ -1,8 +1,8 @@
 class Trip < ActiveRecord::Base
 
-  TRIPTYPE = [
-    'Spring', 'Summer', 'Fall', 'Winter', 'Family', 'Friends', 'Honeymoon', 'Vacation', 'Other'
-  ]
+  # TRIPTYPE = [
+  #   'Spring', 'Summer', 'Fall', 'Winter', 'Family', 'Friends', 'Honeymoon', 'Vacation', 'Other'
+  # ]
 
   validates :title, presence: true
   validates :destination, presence: true
