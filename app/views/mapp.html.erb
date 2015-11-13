@@ -41,8 +41,6 @@
                   End Date: {{trip.end_date}}
                   Tags: {{trip.trip_type}}
                   Notes: {{trip.notes}}
-                  Latitude: {{trip.latitude}}
-                  Longitude: {{trip.longitude}}
                   <% if #{{trip.user.username}} === #{{trips.current_user.username}} %>
                   <form ng-submit="trips.deleteTrip(trip)">
                     <input type="submit" value="Delete Trip">
