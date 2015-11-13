@@ -1,3 +1,5 @@
+/*Please note: below CSS is from jQuery Timelinr (https://github.com/juanbrujo/jQuery-Timelinr) with some parameters modified.*/
+
 * {
 	margin: 0 ;
 	padding: 0 ;
@@ -9,7 +11,7 @@ body {
 	text-align: center;
 }
 
-#dates a.ng-binding {
+#dates a {
 	color: #000 ;
 	text-decoration: none ;
 	-webkit-transition: 0.5s ;
@@ -18,7 +20,7 @@ body {
 	-ms-transition: 0.5s ;
 	transition: 0.5s ;
 }
-	#dates a.ng-binding:hover,
+	#dates a:hover,
 	a.selected {
 		color: #ffc04c !important;
 	}
@@ -50,10 +52,10 @@ body {
 			overflow: hidden ;
 			/*border: red solid 1px;*/
 		}
-		a.ng-binding {
-			background-color: pink;
+		a {
+			/*background-color: pink;*/
 		}
-			#dates li.ng-scope {
+			#dates li {
 				list-style: none ;
 				float: left ;
 				width: 100px;
@@ -62,7 +64,7 @@ body {
 				text-align: center ;
 				background: url('/lib/images/biggerdot_new.png') center bottom no-repeat ;
 			}
-				#dates a.ng-binding {
+				#dates a {
 					line-height: 1.5em ;
 					padding-bottom: 0px ;
 				}
@@ -77,20 +79,20 @@ body {
 			overflow: hidden;
 			/*border: blue solid 1px;*/
 		}
-			#issues li.ng-scope {
+			#issues li {
 				width: 800px ;
 				height: 35px;
 				list-style: none;
 				float: left;
 			}
-				#issues li.selected img {
+				#issues li img {
 					-webkit-transform: scale(1.1,1.1);
 					-moz-transform: scale(1.1,1.1);
 				    -o-transform: scale(1.1,1.1);
 				    -ms-transform: scale(1.1,1.1);
 				    transform: scale(1.1,1.1);
 				}
-				#issues li.ng-scope img {
+				#issues li img {
 					float: left;
 					margin: 10px 30px 10px 50px;
 					background: transparent;
@@ -108,12 +110,12 @@ body {
 				    -ms-transform: scale(0.7,0.7);
 				    transform: scale(0.7,0.7);
 				}
-				#issues li h1.ng-binding {
+				#issues li h1 {
 					color: black;
 					font-size: 1em;
 					margin: 7px 0;
 				}
-				#issues li.ng-scope p {
+				#issues li p {
 					font-size: 14px;
 					margin-right: 70px;
 					font-weight: normal;
