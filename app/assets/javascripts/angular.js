@@ -27,19 +27,13 @@ app.controller('mapController', ['$scope', function ($scope) {
   }
   $scope.$on("TripsReceived", function(event, data) {
     $scope.trips = data.trips;
-    console.log($scope.trips);
-    console.log("---------DATA---------");
-    console.log(data);
+
   });
   $scope.$on("UserIconReceived", function(event, data) {
-    console.log("=======EVENT========");
-    console.log(event);
-    console.log("--------ICON DATA---------");
-    console.log(data);
+
     $scope.user_marker = data.user_marker;
   });
-  console.log("---ICON???---");
-  console.log(userIcon);
+
 }]);
 
 
