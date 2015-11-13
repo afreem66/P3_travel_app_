@@ -18,34 +18,43 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+   font-family: "Poiret One";
  }
- #modal {
-   z-index: 3;
+
+ body {
+      overflow: hidden;
  }
 
  #modal, .app-header {
    background-color: rgba(255, 255, 255, 1);
    position: absolute;
-      transition: 1s;
+   transition: 1s;
  }
 
  #modal {
+   z-index: 3;
    width: 25%;
    height: 70%;
    top: 50%;
    right: 0;
    transform: translateY(-50%);
-   overflow-y: scroll;
+   text-align: left;
+   overflow-y: scroll !important;
+ }
+
+ #modal h2 {
+   margin: 20px 0px 20px 0;
+   text-align: center;
  }
 
  #modal input {
    width: 90%;
    height: 30px;
    margin-left: 6.5%;
-   margin-bottom: 20px;
+   margin-bottom: 15px;
    background-color: #fff;
-   color: #ffc04c;
-   border: 1px solid #ffc04c;
+   color: crimson;
+   border: 1px solid crimson;
 }
 
  .app-header {
@@ -96,7 +105,7 @@
 }
 
 .btn-1 {
-	border: 3px solid #ffc04c !important;
+	border: 3px solid crimson !important;
 }
 
 .btn-1e {
@@ -109,7 +118,7 @@
 	height: 0;
 	top: 50%;
 	left: 50%;
-	background: #ffc04c;
+	background: crimson;
 	opacity: 0;
 	-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
 	-moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);

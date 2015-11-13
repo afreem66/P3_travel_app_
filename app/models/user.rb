@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
     "/lib/images/marker_andrew.png",
     "/lib/images/marker_john.png",
     "/lib/images/marker_tendai.png",
-    "/lib/images/marker_donghwa.png"
+    "/lib/images/marker_dhl.png"
   ]
 
   # added allow_nil to others than password as they might be helpful when updating others???
@@ -19,7 +19,6 @@ class User < ActiveRecord::Base
   }
   validates :email, presence: true, uniqueness: true, allow_nil:true
   validates :full_name, presence: true, allow_nil: true
-  validates :user_marker, inclusion: { in: USERMARKER }
 
 
   has_many :trips, dependent: :destroy

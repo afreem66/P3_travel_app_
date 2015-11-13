@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
     <script src="/lib/js/ng-map.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-​
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>​
     <%= stylesheet_link_tag 'mapp', media: 'all' %>
     <%= javascript_include_tag 'angular' %>
     <link rel="stylesheet" media="screen"  href="/lib/css/timeline_style.css" />
@@ -21,7 +21,7 @@
                 zoom-control-options="{position: 'LEFT_CENTER'}"
                 map-type-control="FALSE"
                 styles=[{"featureType":"all","elementType":"all","stylers":[{"saturation":-100},{"gamma":0.5}]}]>
-              <marker ng-repeat="trip in trips" position="{{trip.latitude}}, {{trip.longitude}}" trip-id="{{trip.trip_id}}" animation="DROP" on-click="show()"></marker>
+              <marker ng-repeat="trip in trips" icon="{{user_marker}}" position="{{trip.latitude}}, {{trip.longitude}}" trip-id="{{trip.trip_id}}" animation="DROP" on-click="show()"></marker>
 ​
     <div id="modal">
         <main ng-controller="TripsController as trips" id="temp-overflow">
@@ -34,13 +34,12 @@
               </form>
               <ul>
                 <li ng-repeat="trip in trips.current_user_trips">
-                  Title: {{trip.title}}
-                  Destination: {{trip.destination}}
-                  Description: {{trip.description}}
-                  Start Date: {{trip.start_date}}
-                  End Date: {{trip.end_date}}
-                  Tags: {{trip.trip_type}}
-                  Notes: {{trip.notes}}
+                  Title: {{trip.title}} <br />
+                  Destination: {{trip.destination}} <br />
+                  Description: {{trip.description}} <br />
+                  Dates: From {{trip.start_date}} to {{trip.end_date}} <br />
+                  Notes: {{trip.notes}} <br />
+
                   <% if #{{trip.user.username}} === #{{trips.current_user.username}} %>
                   <form ng-submit="trips.deleteTrip(trip)">
                     <input type="submit" value="Delete Trip">
@@ -65,7 +64,7 @@
                 </li>
               </ul>
             </div>
-            <div class="front" style="overview:hidden">
+            <div class="front">
               <!-- Form to Enter Users Latest Trip -->
               <h2>Where have you been?</h2>
               <form ng-submit="trips.createTrip()">

@@ -33,7 +33,7 @@ class SessionController < ApplicationController
 
   def user_params
     # do we need other ones here if we just use the two below to log in???
-    return params.require(:user).permit(:username, :password)
+    return params.require(:user).permit(:username, :password, :user_marker)
   end
 
 end

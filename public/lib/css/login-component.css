@@ -53,14 +53,14 @@
 	width: 100%;
 	height: 100vh;
 	background: #cecece;
-	color: #3b3f45;
+	color: crimson;
 	font-size: 1.2em;
 }
 
 .fs-form-overview .fs-fields::before {
 	display: block;
 	margin-bottom: 2.5em;
-	color: #3b3f45;
+	color: crimson;
 	content: 'Review & Submit';
 	font-weight: 700;
 	font-size: 1.85em;
@@ -625,9 +625,9 @@ button.fs-continue,
 button.fs-submit,
 button.fs-continue {
 	padding: 0.6em 1.5em;
-	border: 1px solid #eb7e7f;
+	border: 1px solid crimson;
 	font-weight: 700;
-	color: #eb7e7f;
+	color: crimson;
 	transition: .5s;
 }
 
@@ -638,8 +638,8 @@ button.fs-continue {
 }
 
 .fs-form-overview .fs-submit {
-	border-color: #eb7e7f;
-	color: #eb7e7f;
+	border-color: crimson;
+	color: crimson;
 }
 
 button.fs-continue {
@@ -653,7 +653,7 @@ button.fs-continue {
 button.fs-submit:hover,
 button.fs-submit:focus,
 button.fs-continue:hover {
-	background: #eb7e7f;
+	background: crimson;
 	color: #fff;
 }
 
@@ -678,7 +678,7 @@ button.fs-continue:hover {
 	z-index: 800;
 	max-width: 960px;
 	width: 70%;
-	color: #eb7e7f;
+	color: crimson;
 	font-weight: 700;
 	font-size: 1em;
 	opacity: 0;

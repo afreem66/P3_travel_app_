@@ -1,6 +1,5 @@
 var app = angular.module('TravelApp', ['ngMap']);
 
-
 var locations = [];
 var markers = [];
 var destName;
@@ -8,6 +7,7 @@ var destLat;
 var destLng;
 app.controller('mapController', ['$scope', function ($scope) {
   var controller = this;
+  var userIcon;
   $scope.$on('mapInitialized', function(evt, evtMap) {
             map = evtMap;
             map.setOptions({minZoom: 3})
@@ -28,8 +28,20 @@ app.controller('mapController', ['$scope', function ($scope) {
   $scope.$on("TripsReceived", function(event, data) {
     $scope.trips = data.trips;
     console.log($scope.trips);
+    console.log("---------DATA---------");
+    console.log(data);
   });
+  $scope.$on("UserIconReceived", function(event, data) {
+    console.log("=======EVENT========");
+    console.log(event);
+    console.log("--------ICON DATA---------");
+    console.log(data);
+    $scope.user_marker = data.user_marker;
+  });
+  console.log("---ICON???---");
+  console.log(userIcon);
 }]);
+
 
 //Trips Controller
 app.controller('TripsController', ['$http', '$scope', function($http, $scope) {
@@ -56,7 +68,9 @@ app.controller('TripsController', ['$http', '$scope', function($http, $scope) {
   $http.get('/session').success(function(data) {
     //setting curent user to data.current user because data comes nested in current user
     controller.current_user = data.current_user;
+    userIcon = controller.current_user;
     console.log(controller.current_user);
+    $scope.$emit('UserIconReceived', controller.current_user)
   });
   this.getTrips = function() {
     // get trips for current User
@@ -64,6 +78,8 @@ app.controller('TripsController', ['$http', '$scope', function($http, $scope) {
       $scope.$emit('TripsReceived', data)
       //add trips to controller, data comes back with user
       controller.username = data.username;
+      controller.user_marker = data.user_marker;
+      console.log("-------EMIT TRIP DATA------");
       console.log(data);
       controller.current_user_trips = data.trips;
       controller.trips = [];
